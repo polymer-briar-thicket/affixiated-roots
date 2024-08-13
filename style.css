@@ -1,10 +1,22 @@
+:root {
+  --beige: oklab(93, -2, 12);
+  --lightgreen: oklab(89, -10, 22);
+  --green: oklab(75, -19, 35);
+  --tan: oklab(58, 10, 21);
+  --brown: oklab(39, 6, 10);
+}
+
 body {
   font-family: system-ui;
+  background: var(--green);
+  color: var(--brown);
 }
 
 nav a {
   font-weight: bold;
   text-decoration: none;
-  background: brown;
-  padding-inline: 1em;
+  background: var(--brown);
+  color: var(--lightgreen);
+  padding-inline: 0.5em;
+  border-radius: 0.5lh;
 }
