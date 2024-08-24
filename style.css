@@ -3,21 +3,40 @@
   --lightgreen: oklch(80% 0.062 115.51);
   --green: oklch(73% 0.11 121.23);
   --tan: oklch(64.14% 0.061 59.48);
-  --brown: oklch(28% 0.03 52.65);
+  --brown: oklch(35% 0.047 66.63);
 }
 
 body {
   font-family: system-ui;
   background: var(--green);
-  background-image: url("papertexture.jpg");
+  background-image: url("paper.png");
   background-size: 512px 512px;
   background-repeat: repeat;
-  background-blend-mode: multiply;
   color: var(--brown);
 }
 
+header {
+  display: flex;
+}
+
+#logo {
+  height: 5em;
+  width: 5em;
+  background-color: var(--brown);
+  border-radius: 50%;
+}
+#logo svg {
+  stroke: var(--green);
+}
+#logo:hover svg {
+  stroke: var(--lightgreen);
+}
+
+nav {
+  user-select: none;
+}
+
 nav a {
-  font-weight: bold;
   text-decoration: none;
   background: var(--brown);
   color: var(--lightgreen);
