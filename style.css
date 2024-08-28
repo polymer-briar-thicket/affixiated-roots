@@ -3,7 +3,7 @@
   --lightgreen: oklch(80% 0.062 115.51);
   --green: oklch(73% 0.11 121.23);
   --tan: oklch(64.14% 0.061 59.48);
-  --brown: oklch(35% 0.047 66.63);
+  --brown: oklch(32% 0.045 66);
 }
 
 body {
@@ -16,41 +16,74 @@ body {
 }
 
 header {
-  display: flex;
+  position: relative;
+  background-color: var(--brown);
+  border-radius: 2.5em;
+  --logo-size: 5rem;
+}
+
+#menu {
+  width: var(--logo-size);
+  min-height: var(--logo-size);
+  overflow: hidden;
+  transition: width 0.5s;
+}
+#menu[aria-expanded="false"] {
+  max-height: var(--logo-size);
+}
+#menu[aria-expanded="true"] {
+  width: 100%;
 }
 
 #logo {
-  height: 5em;
-  width: 5em;
-  background-color: var(--brown);
-  border-radius: 50%;
-}
-#logo svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--logo-size);
+  width: var(--logo-size);
   stroke: var(--green);
-}
-#logo:hover svg {
-  stroke: var(--lightgreen);
-}
-
-nav {
+  fill: var(--brown);
   user-select: none;
+  rotate: 0deg;
+  transition: rotate 0.5s;
+}
+#logo:hover {
+  stroke: var(--lightgreen);
+  cursor: pointer;
+}
+#menu[aria-expanded="true"] #logo {
+  stroke: var(--lightgreen);
+  rotate: 360deg;
 }
 
-nav a {
-  text-decoration: none;
-  background: var(--brown);
+#nav {
+  display: flex;
+  padding-left: var(--logo-size);
+  width: calc(100vw - (var(--logo-size) * 1.5));
+  flex-direction: row;
+  flex-wrap: wrap;
+  user-select: none;
   color: var(--lightgreen);
-  padding-inline: 0.5em;
-  padding-block: 0.25lh;
-  border-radius: 0.75lh;
 }
-nav a:hover {
+
+#nav a {
+  display: block;
+  text-decoration: none;
+  color: var(--lightgreen);
+  margin: 0.5em;
+  text-transform: lowercase;
+}
+#nav a:hover {
   color: var(--beige);
 }
 
 main {
-  margin-top: 2lh;
-  padding: 1em;
+  margin-top: 8px;
+  padding: 0.5em;
   background-color: var(--lightgreen);
   border-radius: 0.5lh;
+}
+
+h1 {
+  margin-top: 0;
 }
