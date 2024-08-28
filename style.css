@@ -4,6 +4,9 @@
   --green: oklch(73% 0.11 121.23);
   --tan: oklch(64.14% 0.061 59.48);
   --brown: oklch(32% 0.045 66);
+
+  --fixed-space: 8px;
+  --logo-size: 3rem;
 }
 
 body {
@@ -16,23 +19,23 @@ body {
 }
 
 header {
-  position: relative;
+  position: fixed;
+  margin-inline: var(--fixed-space);
   background-color: var(--brown);
-  border-radius: 2.5em;
-  --logo-size: 5rem;
+  border-radius: calc(var(--logo-size)/2);
 }
 
 #menu {
   width: var(--logo-size);
   min-height: var(--logo-size);
   overflow: hidden;
-  transition: width 0.5s;
+  transition: width 0.5s, height 0.5s;
 }
 #menu[aria-expanded="false"] {
   max-height: var(--logo-size);
 }
 #menu[aria-expanded="true"] {
-  width: 100%;
+  width: clamp(1rem, calc(100% - (var(--fixed-space) * 4)), 50rem);
 }
 
 #logo {
@@ -52,14 +55,14 @@ header {
   cursor: pointer;
 }
 #menu[aria-expanded="true"] #logo {
-  stroke: var(--lightgreen);
   rotate: 360deg;
 }
 
 #nav {
   display: flex;
   padding-left: var(--logo-size);
-  width: calc(100vw - (var(--logo-size) * 1.5));
+  padding-block: 0.25em;
+  width: calc(100vw - (var(--fixed-space) * 4));
   flex-direction: row;
   flex-wrap: wrap;
   user-select: none;
@@ -70,7 +73,8 @@ header {
   display: block;
   text-decoration: none;
   color: var(--lightgreen);
-  margin: 0.5em;
+  margin-block: 0.25em;
+  margin-inline: 0.5em;
   text-transform: lowercase;
 }
 #nav a:hover {
@@ -78,12 +82,24 @@ header {
 }
 
 main {
-  margin-top: 8px;
+  margin-top: var(--fixed-space);
+}
+
+section {
+  margin-bottom: var(--fixed-space);
   padding: 0.5em;
   background-color: var(--lightgreen);
   border-radius: 0.5lh;
+  max-width: 50rem;
+  scroll-margin: calc(var(--logo-size) + (var(--fixed-space) * 3));
+  border: 3px double var(--brown);
 }
 
 h1 {
+  margin-top: 0;
+  margin-left: calc(var(--logo-size) + (var(--fixed-space) * 2));
+}
+
+h2 {
   margin-top: 0;
 }

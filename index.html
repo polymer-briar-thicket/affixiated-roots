@@ -4,15 +4,19 @@
   <meta name="description" content="Musical instruments mixing tradition with innovation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
-</head>
-<body>
   <script>
     function toggleMenu() {
       const menu = document.getElementById("menu");
       if (menu.getAttribute("aria-expanded") == "true") menu.setAttribute("aria-expanded", "false");
       else menu.setAttribute("aria-expanded", "true");
     }
+    function closeMenu() {
+      const menu = document.getElementById("menu");
+      menu.setAttribute("aria-expanded", "false");
+    }
   </script>
+</head>
+<body onscroll="closeMenu()">
   <header id="menu" aria-expanded="false">
     <svg 
       id="logo" 
@@ -44,15 +48,34 @@
       <path d="M345,525L375,555" style="stroke-width:60px;" />
     </svg>
     <nav id="nav" role="menu" aria-expanded="false">
-      <a href="index.html" role="menuitem">⦾ Home</a>
-      <a href="ebass.html" role="menuitem">⦾ Electric Bass</a>
-      <a href="mandolin.html" role="menuitem">⦾ Mandolin</a>
-      <a href="drums.html" role="menuitem">⦾ Drums</a>
+      <a href="#ebass" role="menuitem">⦾ Electric Bass</a>
+      <a href="#mandolin" role="menuitem">⦾ Mandolin</a>
+      <a href="#drums" role="menuitem">⦾ Drums</a>
     </nav>
   </header>
   <main>
     <h1>Affixiated Roots</h1>
-    <p>Coming soon</p>
+    <section id="ebass">
+      <h2>Electric Bass</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis consequat urna ac lobortis. Nullam ut pretium est. Donec facilisis fringilla ultricies. Etiam mi purus, congue quis urna nec, dictum lobortis metus. Ut faucibus, diam at pulvinar sollicitudin, purus leo tincidunt tortor, vel imperdiet nibh eros id nunc. Vestibulum sit amet arcu placerat, imperdiet justo et, lacinia felis. Proin vitae urna purus.</p>
+      <p>Fusce congue dictum ante at mattis. Pellentesque vel ex molestie, feugiat nisl quis, ornare justo. Integer lobortis vestibulum suscipit. Aliquam vitae ligula quam. Donec facilisis posuere velit in pellentesque. Fusce placerat mi id consequat commodo. Aliquam at sem maximus, dignissim elit in, sodales risus. Vivamus odio lorem, bibendum vel arcu vitae, tempor porta urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum velit sem, vestibulum facilisis velit tristique sed. Nulla facilisi.</p>
+      <p>Quisque in turpis elit. Ut vel libero non turpis mollis aliquam et sit amet nisi. Morbi ac mollis turpis, a molestie nibh. Duis elit massa, ultrices sagittis eros nec, condimentum pretium turpis. Quisque sit amet est est. Donec scelerisque risus vel ipsum rhoncus bibendum. Nunc placerat tincidunt metus vel dapibus. Donec eu metus diam. Donec in magna vel augue tempor pellentesque eu facilisis tellus. Suspendisse convallis mattis tortor, et aliquam ex sodales non.</p>
+      <p>Nullam magna lectus, rhoncus quis feugiat vitae, laoreet eu est. Proin porta purus eu feugiat lacinia. In turpis orci, vestibulum ac neque a, consectetur consequat augue. Nunc sit amet arcu dui. Proin maximus libero nec mi placerat pulvinar. Curabitur in volutpat sem. Maecenas ut nisi et elit scelerisque posuere. Fusce vestibulum erat id auctor accumsan.</p>
+    </section>
+    <section id="mandolin">
+      <h2>Mandolin</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis consequat urna ac lobortis. Nullam ut pretium est. Donec facilisis fringilla ultricies. Etiam mi purus, congue quis urna nec, dictum lobortis metus. Ut faucibus, diam at pulvinar sollicitudin, purus leo tincidunt tortor, vel imperdiet nibh eros id nunc. Vestibulum sit amet arcu placerat, imperdiet justo et, lacinia felis. Proin vitae urna purus.</p>
+      <p>Fusce congue dictum ante at mattis. Pellentesque vel ex molestie, feugiat nisl quis, ornare justo. Integer lobortis vestibulum suscipit. Aliquam vitae ligula quam. Donec facilisis posuere velit in pellentesque. Fusce placerat mi id consequat commodo. Aliquam at sem maximus, dignissim elit in, sodales risus. Vivamus odio lorem, bibendum vel arcu vitae, tempor porta urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum velit sem, vestibulum facilisis velit tristique sed. Nulla facilisi.</p>
+      <p>Quisque in turpis elit. Ut vel libero non turpis mollis aliquam et sit amet nisi. Morbi ac mollis turpis, a molestie nibh. Duis elit massa, ultrices sagittis eros nec, condimentum pretium turpis. Quisque sit amet est est. Donec scelerisque risus vel ipsum rhoncus bibendum. Nunc placerat tincidunt metus vel dapibus. Donec eu metus diam. Donec in magna vel augue tempor pellentesque eu facilisis tellus. Suspendisse convallis mattis tortor, et aliquam ex sodales non.</p>
+      <p>Nullam magna lectus, rhoncus quis feugiat vitae, laoreet eu est. Proin porta purus eu feugiat lacinia. In turpis orci, vestibulum ac neque a, consectetur consequat augue. Nunc sit amet arcu dui. Proin maximus libero nec mi placerat pulvinar. Curabitur in volutpat sem. Maecenas ut nisi et elit scelerisque posuere. Fusce vestibulum erat id auctor accumsan.</p>
+    </section>
+    <section id="drums">
+      <h2>Drums</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis consequat urna ac lobortis. Nullam ut pretium est. Donec facilisis fringilla ultricies. Etiam mi purus, congue quis urna nec, dictum lobortis metus. Ut faucibus, diam at pulvinar sollicitudin, purus leo tincidunt tortor, vel imperdiet nibh eros id nunc. Vestibulum sit amet arcu placerat, imperdiet justo et, lacinia felis. Proin vitae urna purus.</p>
+      <p>Fusce congue dictum ante at mattis. Pellentesque vel ex molestie, feugiat nisl quis, ornare justo. Integer lobortis vestibulum suscipit. Aliquam vitae ligula quam. Donec facilisis posuere velit in pellentesque. Fusce placerat mi id consequat commodo. Aliquam at sem maximus, dignissim elit in, sodales risus. Vivamus odio lorem, bibendum vel arcu vitae, tempor porta urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum velit sem, vestibulum facilisis velit tristique sed. Nulla facilisi.</p>
+      <p>Quisque in turpis elit. Ut vel libero non turpis mollis aliquam et sit amet nisi. Morbi ac mollis turpis, a molestie nibh. Duis elit massa, ultrices sagittis eros nec, condimentum pretium turpis. Quisque sit amet est est. Donec scelerisque risus vel ipsum rhoncus bibendum. Nunc placerat tincidunt metus vel dapibus. Donec eu metus diam. Donec in magna vel augue tempor pellentesque eu facilisis tellus. Suspendisse convallis mattis tortor, et aliquam ex sodales non.</p>
+      <p>Nullam magna lectus, rhoncus quis feugiat vitae, laoreet eu est. Proin porta purus eu feugiat lacinia. In turpis orci, vestibulum ac neque a, consectetur consequat augue. Nunc sit amet arcu dui. Proin maximus libero nec mi placerat pulvinar. Curabitur in volutpat sem. Maecenas ut nisi et elit scelerisque posuere. Fusce vestibulum erat id auctor accumsan.</p>
+    </section>
   </main>
 </body>
 </html>
