@@ -4,6 +4,7 @@
   --green: oklch(73% 0.12 121.23);
   --tan: oklch(64.14% 0.061 59.48);
   --brown: oklch(32% 0.045 66);
+  --focus-color: orange;
 
   --fixed-space: 8px;
   --logo-size: 3rem;
@@ -52,10 +53,6 @@ body {
   display: none;
 }
 
-#menu[aria-expanded="true"] #nav {
-  display: default;
-}
-
 #menuToggle {
   position: absolute;
   margin: 0;
@@ -69,7 +66,7 @@ body {
   width: var(--logo-size);
 }
 #menuToggle:focus-visible {
-  box-shadow: inset 0px 0px 5px 5px orange;
+  box-shadow: inset 0px 0px 5px 5px var(--focus-color);
   outline: none;
 }
 #logo {
@@ -106,7 +103,7 @@ body {
   color: var(--beige);
 }
 #nav a:focus-visible {
-  outline-color: orange;
+  outline-color: var(--focus-color);
 }
 
 section {
@@ -129,6 +126,7 @@ h1 {
   margin-top: 0;
   margin-bottom: var(--fixed-space);
   margin-left: calc(var(--logo-size) + (var(--fixed-space) * 2));
+  text-wrap: nowrap;
 }
 
 h2 {
