@@ -5,52 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
   <script>
-    function toggleMenu() {
+    function toggleNav() {
       const menu = document.getElementById("menu");
       if (menu.getAttribute("aria-expanded") == "true") menu.setAttribute("aria-expanded", "false");
       else menu.setAttribute("aria-expanded", "true");
     }
-    function closeMenu() {
+    function closeNav() {
       const menu = document.getElementById("menu");
       menu.setAttribute("aria-expanded", "false");
     }
   </script>
 </head>
-<body onscroll="closeMenu()">
+<body onscroll="closeNav()">
   <header id="menu" aria-expanded="false">
-    <svg 
-      id="logo" 
-      width="5rem" 
-      height="5rem" 
-      viewBox="0 0 720 720" 
-      version="1.1" 
-      xmlns="http://www.w3.org/2000/svg" 
-      xmlns:xlink="http://www.w3.org/1999/xlink" 
-      xml:space="preserve" 
-      xmlns:serif="http://www.serif.com/" 
-      style="stroke-linecap:round;stroke-linejoin:round;"
-      
-      role="button"
-      aria-haspopup="true"
-      aria-controls="menu"
-      onclick="toggleMenu()"
-    >
-      <circle cx="360" cy="360" r="360" style="stroke:none" />
-      <circle cx="360" cy="360" r="300" style="stroke-width:50px;" />
-      <path d="M555,375L525,345" style="stroke-width:60px;" />
-      <path d="M465,435L435,465" style="stroke-width:60px;" />
-      <path d="M345,195L375,165" style="stroke-width:60px;" />
-      <path d="M255,285L285,255" style="stroke-width:60px;" />
-      <path d="M165,375L195,345" style="stroke-width:60px;" />
-      <path d="M255,465L285,435" style="stroke-width:60px;" />
-      <path d="M375,345L345,375" style="stroke-width:60px;" />
-      <path d="M465,255L435,285" style="stroke-width:60px;" />
-      <path d="M345,525L375,555" style="stroke-width:60px;" />
-    </svg>
-    <nav id="nav" role="menu" aria-expanded="false">
-      <a href="#ebass" role="menuitem">⦾ Electric Bass</a>
-      <a href="#mandolin" role="menuitem">⦾ Mandolin</a>
-      <a href="#drums" role="menuitem">⦾ Drums</a>
+    <button id="menuToggle" aria-haspopup="true" aria-controls="menu" onclick="toggleNav()">
+      <svg id="logo" width="5rem" height="5rem" viewBox="0 0 720 720" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="stroke-linecap:round;stroke-linejoin:round;">
+        <circle cx="360" cy="360" r="300" style="stroke-width:50px;" />
+        <path d="M555,375L525,345" style="stroke-width:60px;" />
+        <path d="M465,435L435,465" style="stroke-width:60px;" />
+        <path d="M345,195L375,165" style="stroke-width:60px;" />
+        <path d="M255,285L285,255" style="stroke-width:60px;" />
+        <path d="M165,375L195,345" style="stroke-width:60px;" />
+        <path d="M255,465L285,435" style="stroke-width:60px;" />
+        <path d="M375,345L345,375" style="stroke-width:60px;" />
+        <path d="M465,255L435,285" style="stroke-width:60px;" />
+        <path d="M345,525L375,555" style="stroke-width:60px;" />
+      </svg>
+    </button>
+    <nav id="nav" role="menu">
+      <a href="#ebass" role="menuitem">Electric Bass</a>
+      <a href="#mandolin" role="menuitem">Mandolin</a>
+      <a href="#drums" role="menuitem">Drums</a>
     </nav>
   </header>
   <main>
