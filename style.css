@@ -6,7 +6,8 @@
   --brown: oklch(32% 0.045 66);
   --focus-color: orange;
 
-  --fixed-space: 8px;
+  --wrapper-max-width: 65ch;
+  --gap: 8px;
   --logo-size: 3rem;
 }
 
@@ -23,9 +24,13 @@ body {
   color: var(--brown);
 }
 
+#wrapper {
+  max-width: var(--wrapper-max-width);
+}
+
 #menu {
   position: fixed;
-  margin: var(--fixed-space);
+  margin: var(--gap);
   background-color: var(--brown);
   border-radius: calc(var(--logo-size)/2);
   overflow: hidden;
@@ -36,14 +41,15 @@ body {
   height: var(--logo-size);
 }
 #menu[aria-expanded="true"] {
-  width: clamp(1rem, calc(100% - (var(--fixed-space) * 4)), calc(50rem - (var(--fixed-space) * 2)));
+  width: min(calc(100% - (var(--gap) * 4)), calc(var(--wrapper-max-width) - (var(--gap) * 2)));
   min-height: var(--logo-size);
 }
 
 #nav {
   display: flex;
   padding-left: var(--logo-size);
-  width: calc(100vw - (var(--fixed-space) * 4));
+  padding-right: calc(var(--logo-size) / 2);
+  width: min(calc(100vw - (var(--gap) * 4)), calc(var(--wrapper-max-width) - (var(--gap) * 2)));
   flex-direction: row;
   flex-wrap: wrap;
   user-select: none;
@@ -107,30 +113,29 @@ body {
 }
 
 section {
-  margin-bottom: var(--fixed-space);
+  margin-bottom: var(--gap);
   padding: 0.5em;
   background-color: var(--lightgreen);
   border-radius: 0.5lh;
-  max-width: 50rem;
-  scroll-margin: calc(var(--fixed-space) * 1);
+  scroll-margin: calc(var(--gap) * 1);
   border: 3px double var(--brown);
 }
 h2 + p {
-  margin-top: var(--fixed-space);
+  margin-top: var(--gap);
 }
 
 h1 {
-  --height: calc(var(--logo-size) + (var(--fixed-space) * 2));
+  --height: calc(var(--logo-size) + (var(--gap) * 2));
   height: var(--height);
   line-height: var(--height);
   margin-top: 0;
-  margin-bottom: var(--fixed-space);
-  margin-left: calc(var(--logo-size) + (var(--fixed-space) * 2));
+  margin-bottom: var(--gap);
+  margin-left: calc(var(--logo-size) + (var(--gap) * 2));
   text-wrap: nowrap;
 }
 
 h2 {
   margin-block: 0;
-  margin-left: calc(var(--logo-size) + var(--fixed-space) - 3px);
+  margin-left: calc(var(--logo-size) + var(--gap) - 3px);
   line-height: calc(var(--logo-size) - 6px);
 }
